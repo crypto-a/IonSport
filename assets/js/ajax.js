@@ -26,6 +26,9 @@ const xhr = new XMLHttpRequest();
             
             //fix header style
             header.classList.remove('header-inner-pages')
+
+            //fix main style
+            main.style.marginTop = "0px";
         }
     };
   xhr.open('GET', 'assets/templates/mainPage.html', true);
@@ -49,6 +52,9 @@ homeButton.addEventListener('click', (event) => {
 
             //fix header style
             header.classList.remove('header-inner-pages')
+
+            //fix main style
+            main.style.marginTop = "0px";
         }
     };
   xhr.open('GET', 'assets/templates/mainPage.html', true);
@@ -73,6 +79,9 @@ aboutButton.addEventListener('click', (event) => {
 
             //fix header style
             header.classList.add('header-inner-pages')
+
+            //fix main style
+            main.style.marginTop = "50px";
         }
     };
   xhr.open('GET', 'assets/templates/aboutUsPage.html', true);
@@ -97,6 +106,9 @@ contactButton.addEventListener('click', (event) => {
 
             //fix header style
             header.classList.add('header-inner-pages')
+
+            //fix main style
+            main.style.marginTop = "50px";
         }
     };
   xhr.open('GET', 'assets/templates/contactUsPage.html', true);
@@ -121,6 +133,9 @@ bookButton.addEventListener('click', (event) => {
 
             //fix header style
             header.classList.add('header-inner-pages')
+
+            //fix main style
+            main.style.marginTop = "50px";
         }
     };
   xhr.open('GET', 'assets/templates/bookingPage.html', true);
