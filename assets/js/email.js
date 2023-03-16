@@ -1,29 +1,33 @@
-(function() {
-    // Initialize EmailJS with your user ID
-    emailjs.init("user_123abc");
+// Replace <FORM_KEY> with your Google Form key
+const FORM_KEY = '1FAIpQLSfmh-5sJnFJdCu-lmM8PddQpAaFNPQd9JeavcTPbK-3M2ZTBw';
 
-    // Set up the form submission handler
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
+// Get a reference to the form and its submit button
+const form = document.querySelector('.php-email-form');
+const submitButton = document.querySelector('#submit-button');
 
-      // Get the form data
-      const formData = {
-        name: this.elements['name'].value,
-        email: this.elements['email'].value,
-        subject: this.elements['subject'].value,
-        message: this.elements['message'].value,
-      };
+// Add an event listener to the submit button
+submitButton.addEventListener('click', function(event) {
+// Prevent the default form submission behavior
+event.preventDefault();
 
-      // Send the form data as an email using EmailJS
-      emailjs.send("my_service", "my_template", formData)
-        .then(function(response) {
-          console.log("SUCCESS!", response.status, response.text);
-          // Show a success message to the user
-          document.getElementById('success-message').classList.remove('d-none');
-        }, function(error) {
-          console.log("FAILED...", error);
-          // Show an error message to the user
-          document.getElementById('error-message').classList.remove('d-none');
-        });
-    });
-  })();
+// Get the form data and construct the API request URL
+const formData = new FormData(form);
+const url = `https://docs.google.com/forms/d/e/${FORM_KEY}/formResponse?${serialize(formData)}`;
+
+// Send the API request
+const request = new XMLHttpRequest();
+request.open('GET', url);
+request.send();
+
+// Display a confirmation message to the user
+alert('Your form has been submitted!');
+});
+
+// Helper function to serialize form data as URL-encoded string
+function serialize(formData) {
+const params = [];
+for (const [name, value] of formData) {
+    params.push(`${encodeURIComponent(name)}=${encodeURIComponent(value)}`);
+}
+return params.join('&');
+}

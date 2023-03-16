@@ -109,10 +109,12 @@ contactButton.addEventListener('click', (event) => {
 
             //fix main style
             main.style.marginTop = "50px";
+
         }
     };
   xhr.open('GET', 'assets/templates/contactUsPage.html', true);
   xhr.send();
+  
 });
 
 
