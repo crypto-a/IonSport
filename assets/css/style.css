@@ -167,12 +167,9 @@ h6 {
   transform: scaleX(1);
 }
 
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
-  color: #fff;
-}
+
+
+
 
 .navbar .dropdown ul {
   display: block;
@@ -259,6 +256,13 @@ h6 {
   .navbar ul {
     display: none;
   }
+
+  .navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: #e43c5c;
+}
 }
 
 .navbar-mobile {
@@ -436,6 +440,8 @@ h6 {
   #hero {
     background-attachment: fixed;
   }
+
+  
 }
 
 @media (max-width: 768px) {
@@ -2021,3 +2027,12 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+ .image-box {
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+}
+
